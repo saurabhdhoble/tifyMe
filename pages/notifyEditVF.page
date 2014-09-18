@@ -1,0 +1,29 @@
+<apex:page standardController="Notification__c" extensions="notifyVFExtension">
+	<apex:form >
+        <apex:pageMessages />
+        <apex:pageBlock title="Edit Notification">
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Save" action="{!doSaveExisting}"></apex:commandButton>
+                <apex:commandButton value="Cancel" action="{!doCancel}"></apex:commandButton>
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection >
+                <apex:inputField id="vActive" value="{!Notification__c.Active__c}" />
+                <apex:inputField id="vName" value="{!Notification__c.Name}" />
+                <apex:selectList id="vProfile" value="{!Notification__c.Profile__c}" multiselect="false" size="1">
+                	<apex:selectOptions value="{!profiles}" />
+                </apex:selectList>
+                <apex:inputField id="vExpiration" value="{!Notification__c.Expiration__c}" />
+                <apex:inputField id="vSalutation" value="{!Notification__c.Salutation__c}" />
+                <apex:inputField id="vFrom" value="{!Notification__c.From__c}" />
+                <apex:selectList id="vTheme" value="{!Notification__c.Theme__c}" multiselect="false" size="1">
+					<apex:selectOptions value="{!themes}"></apex:selectOptions>
+                </apex:selectList>
+                <apex:inputField id="vWidth" value="{!Notification__c.Width__c}" />
+                <apex:inputField id="vHeight" value="{!Notification__c.Height__c}" />                
+            </apex:pageBlockSection>
+            <apex:pageBlockSection >
+                <apex:inputField id="vNotificationText" value="{!Notification__c.NotificationText__c}" />
+            </apex:pageBlockSection>
+        </apex:pageBlock>      
+    </apex:form>
+</apex:page>

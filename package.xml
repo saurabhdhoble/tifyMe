@@ -13,6 +13,11 @@
         <name>ApexPage</name>
     </types>
     <types>
+        <members>NotificationMap__c</members>
+        <members>Notification__c</members>
+        <name>CustomObject</name>
+    </types>
+    <types>
         <members>tifyMe</members>
         <name>HomePageComponent</name>
     </types>

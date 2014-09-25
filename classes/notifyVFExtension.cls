@@ -5,7 +5,7 @@ public with sharing class notifyVFExtension
     public notifyVFExtension(ApexPages.StandardController ctrlr)
     {
         this.stdController = ctrlr;
-        this.notif = (tifyMe__Notification__c) ctrlr.getRecord();
+        this.notif = (Notification__c) ctrlr.getRecord();
     }
 
     public List<SelectOption> profiles
@@ -30,7 +30,7 @@ public with sharing class notifyVFExtension
             {
                 //Need to refetch the notification - for some weird reason, the Profile__c field is not fetched
                 //in the notif object (guess it fetches only those fields which are referenced by the VF page.
-                List<tifyMe__Notification__c> tempList = [select Id, Profile__c from tifyMe__Notification__c
+                List<Notification__c> tempList = [select Id, Profile__c from Notification__c
                                                             where id = :notif.Id];
                 if(tempList.size() > 0)
                 {
@@ -114,14 +114,14 @@ public with sharing class notifyVFExtension
         //notification that is already configured.
         // Logic - a. get all notifications configured for dates upto the current
         // b. Loop through and detect if any of them is configured for a conflicting profile.
-        List<tifyMe__Notification__c> liveNotifications = [select Id, Name, Profile__c, tifyMe__Expiration__c
-                                                           from tifyMe__Notification__c
-                                                           where tifyMe__Expiration__c > :DateTime.now()
-                                                           and tifyMe__Active__c = true
+        List<Notification__c> liveNotifications = [select Id, Name, Profile__c, Expiration__c
+                                                           from Notification__c
+                                                           where Expiration__c > :DateTime.now()
+                                                           and Active__c = true
                                                            and Id <> :notif.Id
                                                           ];
         //Loop and detect
-        for(tifyMe__Notification__c obj : liveNotifications)
+        for(Notification__c obj : liveNotifications)
         {
             if(obj.Profile__c == notif.Profile__c)
             {

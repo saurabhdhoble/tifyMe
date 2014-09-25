@@ -91,5 +91,5 @@
         <span id="masterText"></span>
     </div>        
 	</apex:form>
-	<apex:relatedList list="tifyMe__NotificationMaps__r"></apex:relatedList>
+	<apex:relatedList list="NotificationMaps__r"></apex:relatedList>
 </apex:page>

@@ -23,7 +23,7 @@
     <target name="retrieveUnpackaged">
       <!-- <mkdir dir="retrieveUnpackaged"/> -->
       <!-- Retrieve the contents into another directory -->
-      <sf:retrieve username="${sf.username}" password="${sf.password}" serverurl="${sf.serverurl}" maxPoll="${sf.maxPoll}" retrieveTarget="." unpackaged="package.xml"/>
+      <sf:retrieve username="${sf.downloadusername}" password="${sf.downloadpassword}" serverurl="${sf.serverurl}" maxPoll="${sf.maxPoll}" retrieveTarget="." unpackaged="package.xml"/>
     </target>
 
     <!-- Retrieve all the items of a particular metadata type -->
@@ -33,7 +33,7 @@
 
     <!-- Retrieve metadata for all the packages specified under packageNames -->
     <target name="retrievePkg">
-      <sf:retrieve username="${sf.username}" password="${sf.password}" serverurl="${sf.serverurl}" maxPoll="${sf.maxPoll}" retrieveTarget="retrieveOutput" packageNames="${sf.pkgName}"/>
+      <sf:retrieve username="${sf.downloadusername}" password="${sf.downloadpassword}" serverurl="${sf.serverurl}" maxPoll="${sf.maxPoll}" retrieveTarget="retrieveOutput" packageNames="${sf.pkgName}"/>
     </target>
 
     <!-- Deploy the unpackaged set of metadata retrieved with retrieveUnpackaged -->
@@ -62,7 +62,7 @@
     <!-- Shows retrieving code; only succeeds if done after deployCode -->
     <target name="retrieveCode">
       <!-- Retrieve the contents listed in the file codepkg/package.xml into the codepkg directory -->
-      <sf:retrieve username="${sf.username}" password="${sf.password}" serverurl="${sf.serverurl}" maxPoll="${sf.maxPoll}" retrieveTarget="codepkg" unpackaged="codepkg/package.xml"/>
+      <sf:retrieve username="${sf.downloadusername}" password="${sf.downloadpassword}" serverurl="${sf.serverurl}" maxPoll="${sf.maxPoll}" retrieveTarget="codepkg" unpackaged="codepkg/package.xml"/>
     </target>
 
     <!-- Shows deploying code, running all tests, and running tests (1 of which fails), and logging. -->

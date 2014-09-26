@@ -46,7 +46,6 @@
     </actionOverrides>
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
     <deploymentStatus>Deployed</deploymentStatus>
-    <deprecated>false</deprecated>
     <enableActivities>false</enableActivities>
     <enableFeeds>false</enableFeeds>
     <enableHistory>false</enableHistory>
@@ -54,7 +53,6 @@
     <fields>
         <fullName>Notification__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
-        <deprecated>false</deprecated>
         <externalId>false</externalId>
         <label>Notification</label>
         <referenceTo>Notification__c</referenceTo>
@@ -67,7 +65,6 @@
     <fields>
         <fullName>User__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
-        <deprecated>false</deprecated>
         <externalId>false</externalId>
         <label>User</label>
         <referenceTo>User</referenceTo>

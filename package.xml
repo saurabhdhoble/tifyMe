@@ -7,9 +7,7 @@
         <name>ApexClass</name>
     </types>
     <types>
-        <members>notifyCreateVF</members>
-        <members>notifyEditVF</members>
-        <members>notifyViewVF</members>
+        <members>*</members>
         <name>ApexPage</name>
     </types>
     <types>
@@ -18,8 +16,16 @@
         <name>CustomObject</name>
     </types>
     <types>
-        <members>tifyMe</members>
+        <members>*</members>
+        <name>CustomPageWebLink</name>
+    </types>
+    <types>
+        <members>*</members>
         <name>HomePageComponent</name>
+    </types>
+    <types>
+        <members>tifyMe</members>
+        <name>StaticResource</name>
     </types>
     <version>29.0</version>
 </Package>
